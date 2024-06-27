@@ -4,16 +4,15 @@ import UserList from './components/UserList';
 
 const App = () => {
   const [users, setUsers] = useState([]);
-  const [showAllUsers, setShowAllUsers] = useState(false); // Estado para controlar se todos os usuários são exibidos
+  const [showAllUsers, setShowAllUsers] = useState(false);
 
   useEffect(() => {
-    // Simulando uma requisição para obter dados dos usuários
     const fetchUsers = async () => {
       try {
         const response = await fetch('https://dummyjson.com/users');
         if (response.ok) {
           const data = await response.json();
-          setUsers(data.users); // Carrega todos os usuários inicialmente
+          setUsers(data.users);
         } else {
           throw new Error('Failed to fetch users');
         }
@@ -27,9 +26,11 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <Header onToggleShowUsers={() => setShowAllUsers(prevState => !prevState)} showAllUsers={showAllUsers} /> {/* Passando a função para mostrar ou esconder todos os usuários */}
+      <Header onToggleShowUsers={() => setShowAllUsers(prevState => !prevState)} showAllUsers={showAllUsers} />
       <main className="container mx-auto px-4 py-8">
-        {showAllUsers && <UserList users={users} />} {/* Renderiza UserList apenas se showAllUsers for verdadeiro */}
+        <div className={`transition-all duration-500 ${showAllUsers ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+          <UserList users={users} />
+        </div>
       </main>
     </div>
   );
