@@ -1,8 +1,5 @@
-# React + Vite
+Meu primeiro projeto trabalhando com React, algo bem simples onde o meu foco principal foi conseguir utilizar a ferramenta e fazer uma busca em uma fake API.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/Lostleleco/Trabalhando_React/assets/158625504/8205496b-4204-4e7e-b313-7b3310a59856)
